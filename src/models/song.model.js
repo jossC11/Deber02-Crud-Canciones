@@ -1,11 +1,10 @@
 
-
 class Song {
-    constructor(data) {
-        this.id_song = data.id_song || data.ID_SONG;
-        this.song_name = data.song_name || data.SONG_NAME;
-        this.song_path = data.song_path || data.SONG_PATH;
-        this.plays = data.plays || data.PLAYS;
+    constructor({ ID_SONG, SONG_NAME, SONG_PATH, PLAYS }) {
+        this.ID_SONG = ID_SONG;
+        this.SONG_NAME = SONG_NAME;
+        this.SONG_PATH = SONG_PATH;
+        this.PLAYS = PLAYS;
     }
 }
 
