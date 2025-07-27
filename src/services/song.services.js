@@ -1,4 +1,3 @@
-
 const { pool } = require('../config/db');
 const Song = require('../models/song.model');
 
@@ -20,6 +19,7 @@ async function createSong(songData) {
         'INSERT INTO tbl_songs (song_name, song_path, plays) VALUES ($1, $2, $3) RETURNING *',
         [songData.SONG_NAME, songData.SONG_PATH, songData.PLAYS]
     );
+    console.log('Insert result:', result.rows[0]);
     return new Song(result.rows[0]);
 }
 
