@@ -3,12 +3,14 @@ node_modules/
 
 # Archivos de entorno
 .env
+.env.local
+.env.production
 
 # Archivos de logs
 npm-debug.log*
 yarn-debug.log*
 yarn-error.log*
 
-# Otros archivos que no deben subirse
+# Archivos del sistema
 .DS_Store
 Thumbs.db
