@@ -24,13 +24,17 @@ async function getById(req, res) {
 // Crear una nueva canción
 async function create(req, res) {
     try {
+        console.log('POST /api/songs body:', req.body);
         const { SONG_NAME, SONG_PATH, PLAYS } = req.body;
         if (!SONG_NAME || !SONG_PATH || PLAYS === undefined) {
+            console.log('Faltan campos requeridos');
             return res.status(400).json({ error: 'Faltan campos requeridos' });
         }
         const newSong = await songService.createSong({ SONG_NAME, SONG_PATH, PLAYS });
+        console.log('Canción creada:', newSong);
         res.status(201).json(newSong);
     } catch (err) {
+        console.error('Error al crear la canción:', err);
         res.status(500).json({ error: 'Error al crear la canción', details: err.message });
     }
 }
